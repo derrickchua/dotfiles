@@ -40,17 +40,17 @@ new_window pixel 2
 #smart_gaps on
 
 # Audio shortcuts for PulseAudio
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% || pactl set-sink-volume 0 -- +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% || pactl set-sink-volume 0 -- -5%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle 
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2% || pactl set-sink-volume 0 -- +2%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2% || pactl set-sink-volume 0 -- -2%
+#bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle 
 
 #bindsym XF86AudioRaiseVolume exec "amixer -q -D pulse sset Master 5%+"
 #bindsym XF86AudioLowerVolume exec "amixer -q -D pulse sset Master 5%-"
 #bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 
-#bindsym XF86AudioRaiseVolume exec --no-startup-id "/home/dced/scripts/pavolume.sh --up"
-#bindsym XF86AudioLowerVolume exec --no-startup-id "/home/dced/scripts/pavolume.sh --down"
-#bindsym XF86AudioMute exec --no-startup-id "/home/dced/scripts/pavolume.sh --togmute"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "/home/dced/scripts/pavolume.sh --up"
+bindsym XF86AudioLowerVolume exec --no-startup-id "/home/dced/scripts/pavolume.sh --down"
+bindsym XF86AudioMute exec --no-startup-id "/home/dced/scripts/pavolume.sh --togmute"
 
 #enable brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id /home/dced/scripts/bright_down 

@@ -7,7 +7,7 @@ inc='2'
 capvol='no'
 maxvol='200'
 tmpfile='/tmp/pasink.tmp'
-autosync='yes'
+#autosync='yes'
 
 active_sink=`pacmd list-sinks |awk '/* index:/{print $3}'`
 limit=$(expr 100 - ${inc})
