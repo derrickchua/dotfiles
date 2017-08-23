@@ -26,7 +26,7 @@ font pango:Awesome 10
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $mod Mod1
+set $mod Mod4
 set $up k
 set $down j
 set $left h

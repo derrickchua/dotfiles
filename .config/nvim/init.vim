@@ -1,4 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
