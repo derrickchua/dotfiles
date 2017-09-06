@@ -205,7 +205,7 @@ bindsym $mod+r mode "resize"
 
 #Default applications to be opened
 exec firefox-nightly
-exec franz-bin
+exec slack
 exec fcitx
 exec_always --no-startup-id xautolock -corners 00++ -time 15 -locker 'systemctl suspend'
 exec --no-startup-id dunst --config home/dced/.config/dunst/dunstrc
