@@ -207,7 +207,8 @@ bindsym $mod+r mode "resize"
 exec firefox-nightly
 exec slack
 exec fcitx
-exec_always --no-startup-id xautolock -corners 00++ -time 15 -locker 'systemctl suspend'
+exec nm-applet
+exec_always --no-startup-id xautolock -time 15 -locker 'systemctl suspend'
 exec --no-startup-id dunst --config home/dced/.config/dunst/dunstrc
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
