@@ -31,7 +31,7 @@ set $up k
 set $down j
 set $left h
 set $right l
-set $lockimg ~/Wallpapers/archlogo.png
+set $lockimg ~/Wallpapers/stars.png
 
 new_window pixel 2
 #gaps

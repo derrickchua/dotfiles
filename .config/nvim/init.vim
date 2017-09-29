@@ -18,6 +18,7 @@ call plug#end()
 
 " General formatting and keybinds
 set number
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " An example for a vimrc file.
 "

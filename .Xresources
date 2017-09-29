@@ -42,7 +42,7 @@ rofi.color14:    #42717B
 rofi.color7:     #dddddd
 rofi.color15:    #dddddd
 
-URxvt.font: xft: Hack:size=10
+URxvt.font: xft: Inconsolata:size=10
 
 ! Jellybeans Terminal Colours
 URxvt.background: #151515
