@@ -252,7 +252,7 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 10
 
 date = %-d %b
 date-alt = %A, %-d %B %Y
