@@ -33,10 +33,19 @@ set $left h
 set $right l
 set $lockimg ~/Wallpapers/stars.png
 
-new_window pixel 2
+# UI
+new_window pixel 1
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #888888 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #555555 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #444444 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
 #gaps
-#gaps inner 10
-#gaps outer 10
+#gaps inner 8
+#gaps outer 8
 #smart_gaps on
 
 # Audio shortcuts for PulseAudio
@@ -67,7 +76,7 @@ bindsym $mod+Ctrl+l exec systemctl suspend
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -205,10 +214,10 @@ bindsym $mod+r mode "resize"
 
 #Default applications to be opened
 exec firefox-nightly
-exec slack
 exec fcitx
 exec nm-applet
-exec_always --no-startup-id xautolock -time 15 -locker 'systemctl suspend'
+exec xset 900
+exec xss-lock -- betterlockscreen -l
 exec --no-startup-id dunst --config home/dced/.config/dunst/dunstrc
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

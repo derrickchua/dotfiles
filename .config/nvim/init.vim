@@ -4,7 +4,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'chriskempson/base16-vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/neco-vim'
 Plug 'jreybert/vimagit'
@@ -14,6 +13,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
@@ -31,6 +33,19 @@ call plug#end()
 " General formatting and keybinds
 set number
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" fzf
+ let g:rg_command = '
+    \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+    \ -g "*.{js,json,php,md,styl,pug,jade,html,config,py,cpp,c,go,hs,rb,conf,fa,lst}"
+    \ -g "!{.config,.git,node_modules,vendor,build,yarn.lock,*.sty,*.bst,*.coffee,dist}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+" In Neovim, you can set up fzf window using a Vim command
+ let g:fzf_layout = { 'window': 'enew' }
+ let g:fzf_layout = { 'window': '-tabnew' }
+ let g:fzf_layout = { 'window': '10split enew' }
 
 " An example for a vimrc file.
 "
@@ -90,14 +105,12 @@ if !exists(":DiffOrig")
                  \ | wincmd p | diffthis
 endif
 "theme
-colorscheme base16-eighties
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
 " air-line
 let g:airline_powerline_fonts = 1
-let base16colorspace=256  " Access colors present in 256 colorspace
 
 " Set shiftwidth to 2
 autocmd FileType javascript set tabstop=2
@@ -107,10 +120,14 @@ autocmd FileType javascript set smartindent
 autocmd FileType javascript set autoindent
 
 " Map jk to esc
-inoremap jk <Esc>
+" inoremap jk <Esc>
 
 " set background=dark "Setting dark mode
-let g:airline_theme='base16_eighties'
+set background=dark
+let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_italic = 1
+set termguicolors
+colorscheme gruvbox
 
 " For powerline symbols
 if !exists('g:airline_symbols')
@@ -122,7 +139,6 @@ let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
