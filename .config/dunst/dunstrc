@@ -1,5 +1,5 @@
 [global]
-    font = "Droid Sans 8"
+    font = "Roboto 10"
     allow_markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
@@ -27,7 +27,7 @@
 
 [frame]
     frame_width = 1
-    frame_color = "#383838"
+    frame_color = "#ffffff"
 
 [shortcuts]
     close = ctrl+space
@@ -36,16 +36,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#181818"
-    foreground = "#E3C7AF"
+    background = "#ffffff"
+    foreground = "#595959"
     timeout = 5
 
 [urgency_normal]
-    background = "#181818"
-    foreground = "#E3C7AF"
+    background = "#ffffff"
+    foreground = "#595959"
     timeout = 20
 
 [urgency_critical]
-    background = "#181818"
-    foreground = "#E3C7AF"
-timeout = 0
+    background = "#ffffff"
+    foreground = "#595959"
+    timeout = 0

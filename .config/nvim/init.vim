@@ -16,6 +16,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
@@ -124,7 +125,7 @@ autocmd FileType javascript set autoindent
 
 " set background=dark "Setting dark mode
 set background=dark
-let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_contrast_dark = "hard"
 let g:gruvbox_italic = 1
 set termguicolors
 colorscheme gruvbox
