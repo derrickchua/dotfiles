@@ -38,7 +38,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 alias "gpu-off"="sudo modprobe -r nvidia_uvm && sudo modprobe -r nvidia && sudo tee /proc/acpi/bbswitch <<< OFF"
 alias "gpu-on"="sudo tee /proc/acpi/bbswitch <<< ON"
 alias gpu="sudo cat /proc/acpi/bbswitch"
-alias xd="xrandr --output HDMI-1 --right-of eDP-1 --auto; sh /home/dced/.config/polybar/launch.sh"
+alias xd='xrandr --output HDMI-1 --right-of eDP-1 --auto && sleep 3 && sh /home/dced/.config/polybar/launch.sh &'
 alias pf="/etc/openvpn/portforward.sh"
 alias nus="cd /home/dced/NUS/AY1718Sem2"
 

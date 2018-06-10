@@ -220,7 +220,6 @@ exec st
 exec fcitx
 exec nm-applet
 exec xss-lock -- betterlockscreen -l
-exec xset s off
 exec --no-startup-id dunst --config home/dced/.config/dunst/dunstrc
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xautolock -time 15 -locker 'systemctl suspend'
