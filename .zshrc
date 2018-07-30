@@ -1,6 +1,7 @@
 #Changing default editor to nvim
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
+export PATH="/usr/lib/ccache/bin/:$PATH"
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 ttyctl -f
@@ -41,6 +42,7 @@ alias gpu="sudo cat /proc/acpi/bbswitch"
 alias xd='xrandr --output HDMI-1 --right-of eDP-1 --auto && sleep 3 && sh /home/dced/.config/polybar/launch.sh &'
 alias pf="/etc/openvpn/portforward.sh"
 alias nus="cd /home/dced/NUS/AY1718Sem2"
+alias hdd="sudo mount /dev/sdb1 /mnt/HDD"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
