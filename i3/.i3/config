@@ -66,8 +66,17 @@ bindsym XF86MonBrightnessDown exec --no-startup-id /home/dced/scripts/bright_dow
 bindsym XF86MonBrightnessUp  exec --no-startup-id /home/dced/scripts/bright_up
 
 #print screen
-bindsym Print exec "maim -s ~/tmp.png && xclip -selection c -t image/png -i ~/tmp.png && rm ~/tmp.png"
-bindsym $mod+Print exec "maim ~/tmp.png && xclip -selection c -t image/png -i ~/tmp.png && rm ~/tmp.png"
+# bindsym Print exec "maim -s ~/tmp.png && xclip -selection c -t image/png -i ~/tmp.png && rm ~/tmp.png"
+# bindsym $mod+Print exec "maim ~/tmp.png && xclip -selection c -t image/png -i ~/tmp.png && rm ~/tmp.png"
+
+bindsym Print exec "maim -s | xclip -selection clipboard -t image/png"
+bindsym $mod+Print exec "maim -i $(xdotool get activewindow) | xclip -selection clipboard -t image/png" 
+
+#poweroff
+bindsym Pause exec poweroff
+
+#Polybar 
+bindsym --release $mod+t exec polybar-msg cmd toggle
 
 #Lockscreen
 bindsym $mod+Ctrl+l exec systemctl suspend
@@ -214,12 +223,11 @@ bindsym $mod+r mode "resize"
 
 #Default applications to be opened
 exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dced/.i3/workspace-1.json'"
+exec compton -b
 exec firefox-nightly
 exec telegram-desktop
 exec st
-exec fcitx
 exec nm-applet
-exec xss-lock -- betterlockscreen -l
 exec --no-startup-id dunst --config home/dced/.config/dunst/dunstrc
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xautolock -time 15 -locker 'systemctl suspend'

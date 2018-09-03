@@ -1,0 +1,75 @@
+// vim:ts=4:sw=4:et
+{
+    // tabbed split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1053,
+               "width": 1918,
+               "x": 1,
+               "y": 26
+            },
+            "name": "Telegram",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^TelegramDesktop$",
+                "instance": "^telegram\\-desktop$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1032,
+               "width": 638,
+               "x": 0,
+               "y": 47
+            },
+            "name": "Restore Session - Firefox Nightly",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Nightly$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 628,
+       "width": 964,
+       "x": 0,
+       "y": 0
+    },
+    "name": "st",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^st\\-256color$",
+        "instance": "^st\\-256color$",
+        "title": "^st$",
+        "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
