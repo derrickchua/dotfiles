@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/dced/.cache/lightdm/log'
+let g:netrw_dirhist_2='/var/log/lightdm'
+let g:netrw_dirhist_3='/home/dced/.cache/lightdm/log'
+let g:netrw_dirhist_4='/home/dced/.config/gnome-session/sessions'
