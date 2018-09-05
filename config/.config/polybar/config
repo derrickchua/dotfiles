@@ -51,7 +51,7 @@ margin-bottom = 0
 monitor   = ${env:MONITOR:}
 bottom    = false
 width     = 100%
-height    = 26
+height    = 16
 ;offset-x  = 13
 ;offset-y  = 13
 ; override-redirect = true ;
@@ -75,6 +75,7 @@ module-margin-right = 0
 font-0 = Awesome:pixelsize=11;3
 ;font-1 = Siji:pixelsize=8;1
 font-1 = Material Icons:antialia=false:size=11;4
+font-2 = FontAwesome:antialia=false:size=11;4
 
 tray-position = right
 tray-padding = 2
@@ -83,7 +84,7 @@ tray-background = #020202
 
 modules-left = i3 system-cpu-temppercore cpu memory wlan vpn
 modules-center = date
-modules-right = date
+modules-right =
 
 
 ;**********************************************************
@@ -219,7 +220,7 @@ exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 type = internal/date
 interval = 5
 
-date =
+date = %a, %d %b
 date-alt = " %a %d %b %Y"
 
 time = " %H:%M "
@@ -248,5 +249,7 @@ exec = ~/.config/polybar/vpn
 
 [module/system-cpu-temppercore]
 type = custom/script
+format-prefix=""
+format-prefix-foreground = ${colors.white}
 exec = ~/polybar-scripts/polybar-scripts/system-cpu-temppercore/system-cpu-temppercore.sh
-interval = 60
+interval = 5
