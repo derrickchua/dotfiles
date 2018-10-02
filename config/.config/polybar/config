@@ -47,11 +47,11 @@ margin-bottom = 0
 ;                       BAR SETTINGS
 ;
 ;********************************************************
-[bar/top]
+[bar/base]
 monitor   = ${env:MONITOR:}
 bottom    = false
 width     = 100%
-height    = 26
+height    = 13
 ;offset-x  = 13
 ;offset-y  = 13
 ; override-redirect = true ;
@@ -72,7 +72,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Awesome:pixelsize=11;3
+font-0 = Adwaita:pixelsize=11;3
 ;font-1 = Siji:pixelsize=8;1
 font-1 = Material Icons:antialia=false:size=11;4
 
@@ -81,9 +81,9 @@ tray-padding = 2
 tray-transparent = false
 tray-background = #020202
 
-modules-left = i3 system-cpu-temppercore cpu memory wlan vpn
+modules-left = i3 system-cpu-temppercore cpu memory vpn wlan
 modules-center = date
-modules-right = date
+modules-right = volume battery
 
 
 ;**********************************************************
@@ -119,22 +119,22 @@ label-visible-padding = 1
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.blue}
 label = "%percentage% "
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.green}
 label = "%percentage_used% "
 
 [module/wlan]
 type = internal/network
-interface = wlp11s0f3u2
-interval = 3.0
+interface = wlp3s0
+interval = 5.0
 
 format-connected = <ramp-signal> <label-connected>
 
@@ -153,10 +153,12 @@ ramp-signal-foreground = ${colors.cyan}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP1
+adapter = AC
 full-at = 100
+poll-interval = 15
+time-format = %-H:%M
 
-label-discharging = "%percentage%% "
+label-discharging = "%percentage%% -%time% "
 ;format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
@@ -217,9 +219,9 @@ exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 10
 
-date =
+date = %d %b
 date-alt = " %a %d %b %Y"
 
 time = " %H:%M "
@@ -238,9 +240,37 @@ format-prefix = " "
 format-prefix-foreground = ${colors.red}
 exec = $HOME/.config/polybar/uptime
 
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+label-volume = ""
+label-volume-foreground = ${colors.cyan}
+
+format-muted-prefix = ""
+format-muted-foreground = ${colors.cyan}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.cyan}
+bar-volume-foreground-1 = ${colors.cyan}
+bar-volume-foreground-2 = ${colors.cyan}
+bar-volume-foreground-3 = ${colors.cyan}
+bar-volume-foreground-4 = ${colors.cyan}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.red}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${colors.white}
+
+
+
 [module/vpn]
 type = custom/script
-interval = 1200
+interval = 30
 format = "<label> "
 format-prefix = " "
 format-prefix-foreground = ${colors.red}

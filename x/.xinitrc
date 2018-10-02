@@ -38,6 +38,9 @@ start xrdb ~/.Xresources
 start-pulseaudio-x11
 xmodmap ~/.Xmodmap
 # sh ~/.fehbg
+xinput --set-prop "Asus TouchPad" "libinput Natural Scrolling Enabled" 1
+xinput --set-prop "Asus TouchPad" "libinput Horizontal Scroll Enabled" 1
+xinput --set-prop "Asus TouchPad" "libinput Tapping Enabled" 1
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx

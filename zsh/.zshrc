@@ -41,8 +41,10 @@ alias "gpu-on"="sudo tee /proc/acpi/bbswitch <<< ON"
 alias gpu="sudo cat /proc/acpi/bbswitch"
 alias xd='xrandr --output HDMI-1 --right-of eDP-1 --auto && sleep 3 && sh /home/dced/.config/polybar/launch.sh &'
 alias pf="/etc/openvpn/portforward.sh"
-alias nus="cd /home/dced/NUS/AY1718Sem2"
+alias nus="cd /home/dced/NUS/AY1819Sem1"
 alias hdd="sudo mount /dev/sdb1 /mnt/HDD"
+alias update="trizen -Syu"
+alias ts="trizen --noconfirm -S"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

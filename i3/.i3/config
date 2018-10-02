@@ -59,7 +59,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "/home/dced/scripts/pavolume.sh --up"
 bindsym XF86AudioLowerVolume exec --no-startup-id "/home/dced/scripts/pavolume.sh --down"
-bindsym XF86AudioMute exec --no-startup-id "/home/dced/scripts/pavolume.sh --togmute"
+# bindsym XF86AudioMute exec --no-startup-id "/home/dced/scripts/pavolume.sh --togmute"
+bindsym XF86AudioMute exec --no-startup-id "/home/dced/scripts/mute.sh"
 
 #enable brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id /home/dced/scripts/bright_down 
@@ -223,7 +224,9 @@ bindsym $mod+r mode "resize"
 
 #Default applications to be opened
 exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dced/.i3/workspace-1.json'"
+exec light-locker 
 exec compton -b
+exec fcitx
 exec firefox-nightly
 exec telegram-desktop
 exec st
