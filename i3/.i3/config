@@ -233,7 +233,7 @@ exec st
 exec nm-applet
 exec --no-startup-id dunst --config home/dced/.config/dunst/dunstrc
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id xautolock -time 15 -locker 'systemctl suspend'
+exec --no-startup-id xautolock -time 150 -locker 'systemctl suspend'
 exec redshift
 
 ######################################################################
